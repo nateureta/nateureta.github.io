@@ -101,59 +101,55 @@ function displayQuestion() {
 
 // Handle Answer Selection
 function selectAnswer(selectedBtn, selectedText, currentQ) {
-    // Disable all buttons to prevent multiple clicks
-    const allButtons = optionsContainer.querySelectorAll('.option-btn');
-    allButtons.forEach(btn => btn.disabled = true);
-    
-    // Show feedback container
-    feedbackContainer.classList.remove('hidden');
-    
-    // SAFETY FIX: Check if explanations exist for this specific button text
-    if (currentQ.explanations && currentQ.explanations[selectedText]) {
-        explanationText.textContent = currentQ.explanations[selectedText];
-    } else {
-        explanationText.textContent = "Reviewing the logic for this answer choice...";
-    }
-
-    // Check if correct
-    if (selectedText === currentQ.answer) {
-        selectedBtn.classList.add('correct');
-        feedbackText.textContent = "Correct! + XP";
-        feedbackText.style.color = "#2ecc71"; // Using hex since CSS variables might be finicky
+    try {
+        // Disable all buttons
+        const allButtons = optionsContainer.querySelectorAll('.option-btn');
+        allButtons.forEach(btn => btn.disabled = true);
         
-        // Calculate Rewards
-        let earnedXP = xpMap[currentQ.skillLevel] || 10;
+        // Show feedback container
+        if (feedbackContainer) feedbackContainer.classList.remove('hidden');
         
-        // Streak Logic: Increment streak
-        currentStreak++;
-        if (currentStreak >= 3) {
-            earnedXP += 5; 
-            feedbackText.textContent = `Correct! + XP (Streak Bonus!)`;
+        // Handle Explanation
+        if (explanationText) {
+            explanationText.textContent = (currentQ.explanations && currentQ.explanations[selectedText]) 
+                ? currentQ.explanations[selectedText] 
+                : "Explanation loading...";
         }
-        
-        playerXP += earnedXP;
-        
-        // Trigger streak animation
-        streakDisplay.classList.add('streak-active');
-        setTimeout(() => streakDisplay.classList.remove('streak-active'), 300);
 
-    } else {
-        selectedBtn.classList.add('incorrect');
-        feedbackText.textContent = "Incorrect. Streak lost!";
-        feedbackText.style.color = "#e74c3c";
-        currentStreak = 0; 
-        
-        // Highlight the correct answer
-        allButtons.forEach(btn => {
-            if (btn.textContent === currentQ.answer) {
-                btn.classList.add('correct');
+        // Check if correct
+        if (selectedText === currentQ.answer) {
+            selectedBtn.classList.add('correct');
+            feedbackText.textContent = "Correct!";
+            feedbackText.style.color = "#2ecc71";
+            
+            currentStreak++;
+            playerXP += (xpMap[currentQ.skillLevel] || 10) + (currentStreak >= 3 ? 5 : 0);
+            
+            // Streak Animation Safety
+            if (streakDisplay) {
+                streakDisplay.classList.add('streak-active');
+                setTimeout(() => streakDisplay.classList.remove('streak-active'), 300);
             }
-        });
-    }
+        } else {
+            selectedBtn.classList.add('incorrect');
+            feedbackText.textContent = "Incorrect.";
+            feedbackText.style.color = "#e74c3c";
+            currentStreak = 0; 
+            
+            allButtons.forEach(btn => {
+                if (btn.textContent === currentQ.answer) btn.classList.add('correct');
+            });
+        }
 
-    // Refresh stats and show Next button
-    updateDashboard();
-    nextBtn.classList.remove('hidden');
+        // Final UI Updates
+        updateDashboard();
+        if (nextBtn) nextBtn.classList.remove('hidden');
+
+    } catch (err) {
+        console.error("Game Logic Error:", err);
+        // Emergency show next button so user isn't stuck
+        if (nextBtn) nextBtn.classList.remove('hidden');
+    }
 }
 
 // Next Question Button Logic
