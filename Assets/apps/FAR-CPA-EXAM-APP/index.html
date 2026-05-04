@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAR CPA Quest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>FAR Quest: CPA Edition</h1>
+            
+            <div id="player-dashboard">
+                <div class="stat-box">
+                    <span class="stat-label">Title</span>
+                    <span id="player-title" class="stat-value">Staff Accountant</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Level <span id="player-level">1</span></span>
+                    <div id="xp-bar-container">
+                        <div id="xp-bar"></div>
+                    </div>
+                    <span class="xp-text"><span id="player-xp">0</span> / <span id="xp-next">100</span> XP</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Streak</span>
+                    <span id="player-streak" class="stat-value">0 🔥</span>
+                </div>
+            </div>
+        </header>
+
+        <main id="quiz-section">
+            <div id="question-metadata">
+                <span id="meta-area" class="badge area-badge">Loading Area...</span>
+                <span id="meta-skill" class="badge skill-badge">Loading Skill...</span>
+            </div>
+            
+            <h2 id="question-text">Loading questions...</h2>
+            
+            <div id="options-container">
+                </div>
+
+            <div id="feedback-container" class="hidden">
+                <p id="feedback-text"></p>
+                <p id="explanation-text"></p>
+            </div>
+
+            <button id="next-btn" class="hidden">Next Question</button>
+        </main>
+
+        <main id="results-section" class="hidden">
+            <h2>Quest Complete!</h2>
+            <p>Final Level: <span id="final-level">1</span></p>
+            <p>Total XP Earned: <span id="final-xp">0</span></p>
+            <button id="restart-btn">Start New Quest</button>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

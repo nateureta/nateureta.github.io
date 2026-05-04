@@ -1,0 +1,172 @@
+[
+    {
+        "id": "FAR-MCQ-1001",
+        "questionType": "MCQ",
+        "blueprintArea": "Area I: Conceptual Framework and Standard-Setting",
+        "topic": "Objective of Financial Reporting",
+        "skillLevel": "Remembering and Understanding",
+        "targetTimeSeconds": 90,
+        "question": "What is the primary objective of general-purpose financial reporting as outlined by the FASB conceptual framework?",
+        "options": [
+            "To provide information that is useful to management in making operational decisions.",
+            "To provide information about the reporting entity that is useful to present and potential equity investors, lenders, and other creditors.",
+            "To ensure compliance with IRS tax regulations.",
+            "To accurately measure the liquidation value of the enterprise."
+        ],
+        "answer": "To provide information about the reporting entity that is useful to present and potential equity investors, lenders, and other creditors.",
+        "explanation": "According to the conceptual framework, the primary objective of financial reporting is to provide information useful to primary users (investors and creditors) for making decisions about providing resources to the entity."
+    },
+    {
+        "id": "FAR-MCQ-1002",
+        "questionType": "MCQ",
+        "blueprintArea": "Area III: Select Transactions",
+        "topic": "Revenue Recognition (ASC 606)",
+        "skillLevel": "Application",
+        "targetTimeSeconds": 150,
+        "question": "A software company signs a contract on January 1 to provide a customer with a software license and 12 months of technical support. The customer pays $12,000 upfront. The standalone selling price of the license is $10,000 and the support is $2,000. How much revenue should be recognized on January 1 upon delivery of the license?",
+        "options": [
+            "$0",
+            "$1,000",
+            "$10,000",
+            "$12,000"
+        ],
+        "answer": "$10,000",
+        "explanation": "Under ASC 606, revenue is recognized when performance obligations are satisfied. The software license is distinct and delivered immediately, so its standalone selling price of $10,000 is recognized on January 1. The remaining $2,000 is recognized ratably over the 12-month support period."
+    },
+    {
+        "id": "FAR-MCQ-1003",
+        "questionType": "MCQ",
+        "blueprintArea": "Area II: Select Financial Statement Accounts",
+        "topic": "Inventory",
+        "skillLevel": "Analysis",
+        "targetTimeSeconds": 120,
+        "question": "During a period of rising prices, which inventory valuation method will typically result in the lowest reported net income?",
+        "options": [
+            "First-In, First-Out (FIFO)",
+            "Last-In, First-Out (LIFO)",
+            "Weighted Average",
+            "Specific Identification"
+        ],
+        "answer": "Last-In, First-Out (LIFO)",
+        "explanation": "In a period of rising prices, LIFO assigns the most recent, higher costs to Cost of Goods Sold (COGS). Higher COGS results in a lower gross profit and, consequently, the lowest reported net income."
+    },
+    {
+        "id": "FAR-MCQ-1004",
+        "questionType": "MCQ",
+        "blueprintArea": "Area III: Select Transactions",
+        "topic": "Leases (ASC 842)",
+        "skillLevel": "Application",
+        "targetTimeSeconds": 150,
+        "question": "Under ASC 842, how should a lessee initially record an operating lease on the balance sheet?",
+        "options": [
+            "As a lease expense recognized straight-line over the lease term with no balance sheet impact.",
+            "As a Right-of-Use (ROU) asset and a corresponding lease liability.",
+            "As a prepaid rent asset only.",
+            "As an intangible asset amortized over the economic life of the underlying asset."
+        ],
+        "answer": "As a Right-of-Use (ROU) asset and a corresponding lease liability.",
+        "explanation": "Under the ASC 842 lease accounting standard, lessees are required to recognize a Right-of-Use (ROU) asset and a lease liability for all leases with a term greater than 12 months, regardless of whether they are classified as operating or finance leases."
+    },
+    {
+        "id": "FAR-MCQ-1005",
+        "questionType": "MCQ",
+        "blueprintArea": "Area I: Conceptual Framework and Standard-Setting",
+        "topic": "Statement of Cash Flows",
+        "skillLevel": "Application",
+        "targetTimeSeconds": 120,
+        "question": "When preparing the statement of cash flows using the indirect method, how should an increase in accounts receivable be treated?",
+        "options": [
+            "Added to net income in the operating activities section.",
+            "Deducted from net income in the operating activities section.",
+            "Added to cash flows from investing activities.",
+            "Deducted from cash flows from financing activities."
+        ],
+        "answer": "Deducted from net income in the operating activities section.",
+        "explanation": "An increase in accounts receivable means that sales revenue recognized in net income was higher than the actual cash collected. Therefore, the increase must be deducted from net income to reconcile to cash provided by operating activities."
+    },
+    {
+        "id": "FAR-MCQ-1006",
+        "questionType": "MCQ",
+        "blueprintArea": "Area II: Select Financial Statement Accounts",
+        "topic": "Bonds Payable",
+        "skillLevel": "Remembering and Understanding",
+        "targetTimeSeconds": 90,
+        "question": "A bond is issued at a discount when:",
+        "options": [
+            "The stated (coupon) interest rate is greater than the market (effective) interest rate.",
+            "The stated (coupon) interest rate is less than the market (effective) interest rate.",
+            "The stated (coupon) interest rate is equal to the market (effective) interest rate.",
+            "The bond is callable by the issuer."
+        ],
+        "answer": "The stated (coupon) interest rate is less than the market (effective) interest rate.",
+        "explanation": "When the stated rate of the bond is lower than what the market demands (the effective rate), investors will not pay face value for the bond. The bond must be sold at a discount to make its yield competitive with the market."
+    },
+    {
+        "id": "FAR-MCQ-1007",
+        "questionType": "MCQ",
+        "blueprintArea": "Area II: Select Financial Statement Accounts",
+        "topic": "Intangible Assets",
+        "skillLevel": "Analysis",
+        "targetTimeSeconds": 120,
+        "question": "Which of the following intangible assets is subject to an annual impairment test rather than systemic amortization?",
+        "options": [
+            "A patent with a remaining legal life of 15 years.",
+            "A copyright with a remaining life of 10 years.",
+            "Goodwill generated from the acquisition of a subsidiary.",
+            "A customer list with an estimated useful life of 5 years."
+        ],
+        "answer": "Goodwill generated from the acquisition of a subsidiary.",
+        "explanation": "Intangible assets with indefinite useful lives, such as goodwill, are not amortized. Instead, they are tested for impairment at least annually, or more frequently if events indicate potential impairment."
+    },
+    {
+        "id": "FAR-MCQ-1008",
+        "questionType": "MCQ",
+        "blueprintArea": "Area II: Select Financial Statement Accounts",
+        "topic": "Stockholders' Equity",
+        "skillLevel": "Application",
+        "targetTimeSeconds": 150,
+        "question": "A company purchases 1,000 shares of its own $10 par value common stock for $25 per share. It accounts for treasury stock using the cost method. What is the effect of this transaction on total stockholders' equity?",
+        "options": [
+            "No effect on total stockholders' equity.",
+            "Increases total stockholders' equity by $25,000.",
+            "Decreases total stockholders' equity by $25,000.",
+            "Decreases total stockholders' equity by $10,000."
+        ],
+        "answer": "Decreases total stockholders' equity by $25,000.",
+        "explanation": "Under the cost method, treasury stock is recorded at the cost to acquire it ($25 x 1,000 = $25,000). Treasury stock is a contra-equity account, meaning its purchase reduces total stockholders' equity by the total cost."
+    },
+    {
+        "id": "FAR-MCQ-1009",
+        "questionType": "MCQ",
+        "blueprintArea": "Area III: Select Transactions",
+        "topic": "Subsequent Events",
+        "skillLevel": "Analysis",
+        "targetTimeSeconds": 120,
+        "question": "A company's fiscal year ends on December 31. On January 15, before the financial statements are issued, a major customer declares bankruptcy due to a deteriorating financial condition that existed at year-end. How should this be handled in the December 31 financial statements?",
+        "options": [
+            "It should be recognized and adjusting journal entries made to the financial statements.",
+            "It should be disclosed in the footnotes only, with no adjustment to the financial statements.",
+            "It should be ignored since the event occurred after the balance sheet date.",
+            "It should be recorded as a prior period adjustment."
+        ],
+        "answer": "It should be recognized and adjusting journal entries made to the financial statements.",
+        "explanation": "This is a recognized (Type I) subsequent event. Because the condition (deteriorating financial status) existed at the balance sheet date, the bankruptcy provides additional evidence about conditions at year-end, requiring an adjustment to the financial statements (e.g., writing off the receivable)."
+    },
+    {
+        "id": "FAR-MCQ-1010",
+        "questionType": "MCQ",
+        "blueprintArea": "Area IV: State and Local Governments",
+        "topic": "Not-for-Profit Entities",
+        "skillLevel": "Remembering and Understanding",
+        "targetTimeSeconds": 90,
+        "question": "A not-for-profit organization receives a cash donation with the stipulation that the principal must be held in perpetuity and only the investment income can be spent. How should this donation be classified on the Statement of Activities?",
+        "options": [
+            "Net assets without donor restrictions.",
+            "Net assets with donor restrictions.",
+            "Deferred revenue.",
+            "Board-designated net assets."
+        ],
+        "answer": "Net assets with donor restrictions.",
+        "explanation": "Under FASB ASU 2016-14, net assets are classified as either 'with donor restrictions' or 'without donor restrictions'. An endowment where the principal must be maintained in perpetuity is explicitly restricted by the donor, so it falls under 'net assets with donor restrictions'."
+    }
+]

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Ureta | Professional Profile</title>
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --bg-offwhite: #f9f9f9;
+            --text-main: #111111;
+            --text-secondary: #555555;
+            --border-light: #eaeaea;
+            --border-dark: #cccccc;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* Section Layout */
+        section {
+            padding: 80px 24px;
+        }
+
+        .section-bg {
+            background-color: var(--bg-offwhite);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 100px 24px 80px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--border-light);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .hero .title {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 500px;
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--text-main);
+            color: var(--bg-white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: 1px solid var(--text-main);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--bg-white);
+            color: var(--text-main);
+        }
+
+        /* Typography */
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+            color: var(--text-main);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        /* Bento Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-light);
+            padding: 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            border-color: var(--border-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Resume Section */
+        .resume-subsection {
+            margin-bottom: 48px;
+        }
+
+        .resume-subsection h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 8px;
+        }
+
+        .resume-item {
+            margin-bottom: 32px;
+        }
+
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .resume-role {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .resume-company {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .resume-date {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .resume-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .resume-desc ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .resume-desc li {
+            margin-bottom: 6px;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 8px 16px;
+            border: 1px solid var(--border-light);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+            font-weight: 500;
+        }
+
+        /* Connect Links */
+        .links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: var(--bg-white);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background: var(--bg-offwhite);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .grid { grid-template-columns: 1fr; }
+            .resume-header { flex-direction: column; justify-content: flex-start; }
+            .resume-date { margin-bottom: 8px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">N.Ureta</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#involvement">Involvement</a>
+                <a href="#resume">Resume</a>
+                <a href="#connect">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="top">
+        <div class="container">
+            <img src="Assets/profilepic.jpg" alt="Nathan Ureta" class="profile-img">
+            <h1>Nathan Ureta</h1>
+            <p class="title">Accounting Student at Rutgers Business School</p>
+            <div class="links" style="justify-content: center;">
+                <a href="#connect" class="btn-primary">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-bg" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a dedicated Accounting student at Rutgers Business School maintaining a 4.0 GPA. I bring practical experience in financial operations and customer service, combined with a strong drive for accuracy in daily reconciliations and ledger updates.</p>
+            <p>I thrive on taking initiative to efficiently achieve team and company goals, approaching both challenging concepts and day-to-day responsibilities with resilience and tenacity.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Technical Projects</h2>
+            <div class="grid" style="grid-template-columns: 1fr;"> 
+                <div class="card">
+                    <div>
+                        <h3>FAR Quest: CPA Edition</h3>
+                        <p style="margin-bottom: 16px;">A gamified web application I developed to help accounting students study for the Financial Accounting and Reporting (FAR) CPA exam. The app features dynamic XP leveling, streak tracking, and interactive feedback.</p>
+                    </div>
+                    <div>
+                        <a href="Assets/apps/FAR-CPA-EXAM-APP/index.html" class="btn-primary" style="padding: 8px 20px; font-size: 0.9rem; width: max-content;">Launch Web App</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-bg" id="involvement">
+        <div class="container">
+            <h2>Campus Involvement & Service</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Southeast Asians at Rutgers</h3>
+                    <p>Leadership Intern. Assisted and shadowed executive board members to gain insight into club management, event coordination, and community engagement.</p>
+                </div>
+                <div class="card">
+                    <h3>Athletics & Mentorship</h3>
+                    <p>Coached and mentored 30 young athletes at a volleyball camp, focusing on skill development, teamwork, and sportsmanship. High School Varsity and Intramural College Volleyball Player.</p>
+                </div>
+                <div class="card">
+                    <h3>Accounting Association</h3>
+                    <p>Active member of the Rutgers Accounting Association, building foundational industry connections and knowledge.</p>
+                </div>
+                <div class="card">
+                    <h3>Community Volunteer</h3>
+                    <p>Volunteered at the local thrift shop to aid in providing clothing and resources for the less fortunate in the community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="container">
+            <h2>Experience & Education</h2>
+            
+            <div class="resume-subsection">
+                <h3>Professional Experience</h3>
+                
+                <div class="resume-item">
+                    <div class="resume-header">
+                        <div>
+                            <span class="resume-role">Accounting/Finance Intern</span> 
+                            <span class="resume-company">| ADC (Appliance Dealers Cooperative)</span>
+                        </div>
+                        <div class="resume-date">May 2025 – Sep 2025</div>
+                    </div>
+                    <div class="resume-desc">
+                        <ul>
+                            <li>Entered and deposited dealer checks through the Telnet system, maintaining detailed logs and verifying transaction accuracy.</li>
+                            <li>Reviewed and validated over 50 dealer transactions daily within the Telnet system to ensure accurate daily reconciliations and ledger updates.</li>
+                            <li>Filed and organized at least 20 invoices weekly to maintain accurate financial records and support timely accounts payable processing.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="resume-item">
+                    <div class="resume-header">
+                        <div>
+                            <span class="resume-role">Sales Associate</span> 
+                            <span class="resume-company">| CVS Health</span>
+                        </div>
+                        <div class="resume-date">Sep 2022 – Apr 2023</div>
+                    </div>
+                    <div class="resume-desc">
+                        <ul>
+                            <li>Applied knowledge of the POS system to process transactions, returns, and discounts for 50+ customers daily.</li>
+                            <li>Monitored and provided assistance to at least 50 customers daily using the self-checkout system, ensuring smooth transactions and addressing issues.</li>
+                            <li>Replenished over 100 shelves with new products, creating a methodical pattern for ease of customer access.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-subsection">
+                <h3>Education</h3>
+                
+                <div class="resume-item">
+                    <div class="resume-header">
+                        <div>
+                            <span class="resume-role">Bachelor of Science, Accounting</span>
+                        </div>
+                        <div class="resume-date">May 2028</div>
+                    </div>
+                    <div class="resume-desc">
+                        <p>Rutgers Business School, New Brunswick, NJ.</p>
+                        <p><strong>GPA: 4.0</strong> | 150 credits expected by May 2029</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-subsection">
+                <h3>Skills & Technologies</h3>
+                <div class="skills-container">
+                    <span class="skill-tag">Telnet System</span>
+                    <span class="skill-tag">Accounts Payable</span>
+                    <span class="skill-tag">POS Systems</span>
+                    <span class="skill-tag">Reconciliations</span>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">English (Native)</span>
+                    <span class="skill-tag">Tagalog (Basic)</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-bg" id="connect">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out for opportunities, networking, or just to say hello.</p>
+            <div class="links">
+                <a href="mailto:nsu5@scarletmail.rutgers.edu" class="btn-outline">Email Me</a>
+                <a href="https://www.linkedin.com/in/nathan-ureta-9424ab353/" target="_blank" rel="noopener noreferrer" class="btn-outline">LinkedIn</a>
+                <a href="tel:7329107700" class="btn-outline">Call: (732) 910-7700</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nathan Ureta. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

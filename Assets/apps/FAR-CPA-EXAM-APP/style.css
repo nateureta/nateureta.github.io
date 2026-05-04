@@ -1,0 +1,220 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #f39c12;
+    --background-color: #ecf0f1;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --correct-color: #27ae60;
+    --incorrect-color: #e74c3c;
+    --xp-color: #3498db;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0;
+}
+
+.app-container {
+    background-color: var(--card-bg);
+    max-width: 650px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+}
+
+/* Dashboard Styles */
+#player-dashboard {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #e0e6ed;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#xp-bar-container {
+    width: 90%;
+    height: 10px;
+    background-color: #e0e6ed;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0.25rem 0;
+}
+
+#xp-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--xp-color);
+    transition: width 0.5s ease-out;
+}
+
+.xp-text {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+}
+
+/* Metadata Badges */
+#question-metadata {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* Keeps badges neat on smaller screens */
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.area-badge {
+    background-color: #e8f4f8;
+    color: #2980b9;
+    border: 1px solid #2980b9;
+}
+
+.skill-badge {
+    background-color: #fcf3cf;
+    color: #d35400;
+    border: 1px solid #d35400;
+}
+
+/* Question & Options */
+#question-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: #ffffff;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: var(--primary-color);
+    background-color: #f8f9fa;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+.option-btn.correct {
+    background-color: var(--correct-color);
+    color: white;
+    border-color: var(--correct-color);
+}
+
+.option-btn.incorrect {
+    background-color: var(--incorrect-color);
+    color: white;
+    border-color: var(--incorrect-color);
+}
+
+/* Feedback Section */
+#feedback-container {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border-left: 5px solid var(--primary-color);
+}
+
+#feedback-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+#explanation-text {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Buttons */
+button#next-btn, button#restart-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+button#next-btn:hover, button#restart-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+/* Streak Animation */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); color: #e74c3c; }
+    100% { transform: scale(1); }
+}
+
+.streak-active {
+    animation: pop 0.3s ease-in-out;
+    display: inline-block;
+}
