@@ -135,4 +135,50 @@ function selectAnswer(selectedBtn, selectedText, currentQ) {
 
     } else {
         selectedBtn.classList.add('incorrect');
-        feedbackText.textContent = "Incorrect
+        feedbackText.textContent = "Incorrect. Streak lost!";
+        feedbackText.style.color = "var(--incorrect-color)";
+        currentStreak = 0; // Reset streak on wrong answer
+        
+        // Highlight the correct answer for the user
+        allButtons.forEach(btn => {
+            if (btn.textContent === currentQ.answer) {
+                btn.classList.add('correct');
+            }
+        });
+    }
+
+    // Refresh the dashboard stats and show the Next button
+    updateDashboard();
+    nextBtn.classList.remove('hidden');
+}
+
+// Next Question Button Logic
+nextBtn.addEventListener('click', () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        // End of Quiz
+        document.getElementById('quiz-section').classList.add('hidden');
+        document.getElementById('results-section').classList.remove('hidden');
+        document.getElementById('final-level').textContent = playerLevel;
+        document.getElementById('final-xp').textContent = playerXP;
+    }
+});
+
+// Restart Quiz Button Logic
+document.getElementById('restart-btn').addEventListener('click', () => {
+    currentQuestionIndex = 0;
+    playerXP = 0;
+    currentStreak = 0;
+    
+    document.getElementById('results-section').classList.add('hidden');
+    document.getElementById('quiz-section').classList.remove('hidden');
+    
+    // Reshuffle or reload logic could go here in the future
+    updateDashboard();
+    displayQuestion();
+});
+
+// Start the app!
+loadQuestions();
