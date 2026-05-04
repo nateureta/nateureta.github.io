@@ -108,19 +108,23 @@ function selectAnswer(selectedBtn, selectedText, currentQ) {
     // Show feedback container
     feedbackContainer.classList.remove('hidden');
     
-    // Load the specific explanation for the option clicked
-    explanationText.textContent = currentQ.explanations[selectedText];
+    // SAFETY FIX: Check if explanations exist for this specific button text
+    if (currentQ.explanations && currentQ.explanations[selectedText]) {
+        explanationText.textContent = currentQ.explanations[selectedText];
+    } else {
+        explanationText.textContent = "Reviewing the logic for this answer choice...";
+    }
 
     // Check if correct
     if (selectedText === currentQ.answer) {
         selectedBtn.classList.add('correct');
         feedbackText.textContent = "Correct! + XP";
-        feedbackText.style.color = "var(--correct-color)";
+        feedbackText.style.color = "#2ecc71"; // Using hex since CSS variables might be finicky
         
         // Calculate Rewards
         let earnedXP = xpMap[currentQ.skillLevel] || 10;
         
-        // Streak Logic: Increment streak, add bonus if streak is 3 or higher
+        // Streak Logic: Increment streak
         currentStreak++;
         if (currentStreak >= 3) {
             earnedXP += 5; 
@@ -136,10 +140,10 @@ function selectAnswer(selectedBtn, selectedText, currentQ) {
     } else {
         selectedBtn.classList.add('incorrect');
         feedbackText.textContent = "Incorrect. Streak lost!";
-        feedbackText.style.color = "var(--incorrect-color)";
-        currentStreak = 0; // Reset streak on wrong answer
+        feedbackText.style.color = "#e74c3c";
+        currentStreak = 0; 
         
-        // Highlight the correct answer for the user
+        // Highlight the correct answer
         allButtons.forEach(btn => {
             if (btn.textContent === currentQ.answer) {
                 btn.classList.add('correct');
@@ -147,7 +151,7 @@ function selectAnswer(selectedBtn, selectedText, currentQ) {
         });
     }
 
-    // Refresh the dashboard stats and show the Next button
+    // Refresh stats and show Next button
     updateDashboard();
     nextBtn.classList.remove('hidden');
 }
